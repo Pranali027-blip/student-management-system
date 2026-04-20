@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #6C63FF; border-radius: 10px; }

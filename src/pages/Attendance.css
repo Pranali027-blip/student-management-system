@@ -1,0 +1,256 @@
+/* DATE BADGE */
+.att-date-badge {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* MID ROW */
+.att-mid-row {
+  display: grid;
+  grid-template-columns: 240px 1fr 220px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* DONUT */
+.att-donut-card { min-width: 0; }
+
+.att-donut-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.att-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.att-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.att-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.att-legend-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.att-legend-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e1b4b;
+}
+
+/* BAR CHART */
+.att-weekly-card { min-width: 0; }
+
+.att-bar-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 120px;
+  padding: 0 8px;
+  gap: 8px;
+}
+
+.att-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 6px;
+}
+
+.att-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+}
+
+.att-bar-wrap {
+  width: 14px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.att-bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  position: relative;
+  transition: height 0.3s ease;
+  cursor: pointer;
+}
+
+.att-bar:hover .att-bar-tip { display: block; }
+
+.att-bar-tip {
+  display: none;
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e1b4b;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.att-bar-day {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+.att-bar-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f8;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.att-bar-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* GRADE CARD */
+.att-grade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.att-grade-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #f8f7ff;
+  border-radius: 10px;
+}
+
+.att-grade-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.att-grade-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.att-grade-name { font-size: 13px; font-weight: 700; color: #1e1b4b; }
+.att-grade-sub  { font-size: 11px; color: #9ca3af; }
+
+.att-grade-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.att-grade-pct { font-size: 15px; font-weight: 700; }
+
+/* STATUS BADGES */
+.att-status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.att-present { background: #d1fae5; color: #065f46; }
+.att-absent  { background: #fee2e2; color: #991b1b; }
+.att-late    { background: #fef3c7; color: #92400e; }
+
+/* QUICK MARK BUTTONS */
+.att-quick-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.att-quick-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.att-q-green       { background: #f0fdf4; color: #16a34a; }
+.att-q-active-green { background: #10b981; color: #fff; }
+
+.att-q-amber       { background: #fffbeb; color: #d97706; }
+.att-q-active-amber { background: #f59e0b; color: #fff; }
+
+.att-q-red         { background: #fff1f2; color: #dc2626; }
+.att-q-active-red  { background: #ef4444; color: #fff; }
+
+/* EDIT MODAL STATUS PICKER */
+.att-status-picker {
+  display: flex;
+  gap: 12px;
+}
+
+.att-status-option {
+  flex: 1;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.att-status-option:hover { transform: translateY(-2px); }
+
+.att-status-icon { font-size: 28px; }
+
+.att-status-opt-label {
+  font-size: 13px;
+  font-weight: 700;
+}
