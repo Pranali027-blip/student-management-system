@@ -53,7 +53,7 @@ function Attendance() {
   const [editStatus, setEditStatus]   = useState<AttendanceStatus>('Present')
   const [showEditModal, setShowEditModal] = useState(false)
 
-  // ── FILTER ──
+ 
   const filtered = records.filter(r => {
     const matchSearch =
       r.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -71,14 +71,14 @@ function Attendance() {
   function handleFilter(v: string) { setStatusFilter(v); setCurrentPage(1) }
   function goToPage(p: number) { if (p >= 1 && p <= totalPages) setCurrentPage(p) }
 
-  // ── QUICK TOGGLE ──
+  
   function quickToggle(id: number, status: AttendanceStatus) {
     setRecords(prev => prev.map(r =>
       r.id === id ? { ...r, status, time: status === 'Absent' ? '--' : status === 'Late' ? '09:10 AM' : '08:45 AM' } : r
     ))
   }
 
-  // ── EDIT MODAL ──
+ 
   function openEdit(r: AttendanceRecord) {
     setEditId(r.id)
     setEditStatus(r.status)
@@ -105,7 +105,7 @@ function Attendance() {
   return (
     <div className="dash-app">
 
-      {/* SIDEBAR */}
+     
       <div className="dash-sidebar">
         <div className="dash-logo">
           <div className="dash-logo-icon">🎓</div>
@@ -139,27 +139,34 @@ function Attendance() {
         <div className="dash-sidebar-user">
           <div className="dash-user-avatar">HS</div>
           <div>
-            <div className="dash-user-name">Halima Selina</div>
+            <div className="dash-user-name">Pranali Bagilgekar</div>
             <div className="dash-user-role">Teacher</div>
           </div>
         </div>
       </div>
 
-      {/* MAIN */}
+      
       <div className="dash-main">
 
-        {/* TOPBAR */}
+        
         <div className="dash-topbar">
           <div>
             <h1 className="dash-page-title">Attendance</h1>
             <p className="dash-page-sub">Track and manage daily student attendance.</p>
           </div>
           <div className="dash-topbar-right">
-            <div className="att-date-badge">📅 Thursday, 18 Jan 2024</div>
+            <div className="att-date-badge">
+  📅 {new Date().toLocaleDateString('en-IN', {
+    weekday: 'long',
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  })}
+</div>
           </div>
         </div>
 
-        {/* STAT CARDS */}
+       
         <div className="dash-stats-grid">
           <div className="dash-stat-card card-blue">
             <div>
@@ -195,10 +202,10 @@ function Attendance() {
           </div>
         </div>
 
-        {/* MIDDLE ROW */}
+       
         <div className="att-mid-row">
 
-          {/* DONUT CHART */}
+          
           <div className="dash-card att-donut-card">
             <div className="dash-card-header">
               <h3>Today's Overview</h3>
@@ -206,18 +213,18 @@ function Attendance() {
             </div>
             <div className="att-donut-wrap">
               <svg viewBox="0 0 140 140" width="140" height="140">
-                {/* background circle */}
+                
                 <circle cx="70" cy="70" r="54" fill="none" stroke="#f0f0f8" strokeWidth="16"/>
-                {/* present arc */}
+               
                 <circle cx="70" cy="70" r="54" fill="none" stroke="#10b981" strokeWidth="16"
                   strokeDasharray={`${(present/total)*339.3} 339.3`}
                   strokeLinecap="round" transform="rotate(-90 70 70)"/>
-                {/* late arc */}
+               
                 <circle cx="70" cy="70" r="54" fill="none" stroke="#f59e0b" strokeWidth="16"
                   strokeDasharray={`${(late/total)*339.3} 339.3`}
                   strokeLinecap="round"
                   transform={`rotate(${-90 + (present/total)*360} 70 70)`}/>
-                {/* absent arc */}
+                
                 <circle cx="70" cy="70" r="54" fill="none" stroke="#ef4444" strokeWidth="16"
                   strokeDasharray={`${(absent/total)*339.3} 339.3`}
                   strokeLinecap="round"
@@ -251,7 +258,7 @@ function Attendance() {
             </div>
           </div>
 
-          {/* WEEKLY BAR CHART */}
+        
           <div className="dash-card att-weekly-card">
             <div className="dash-card-header">
               <h3>Weekly Attendance</h3>
@@ -288,7 +295,7 @@ function Attendance() {
             </div>
           </div>
 
-          {/* GRADE BREAKDOWN */}
+          
           <div className="dash-card att-grade-card">
             <div className="dash-card-header">
               <h3>By Grade</h3>
@@ -321,7 +328,7 @@ function Attendance() {
           </div>
         </div>
 
-        {/* TABLE */}
+       
         <div className="dash-card">
           <div className="dash-card-header">
             <h3>Attendance Register — Today</h3>
@@ -415,7 +422,7 @@ function Attendance() {
         </div>
       </div>
 
-      {/* EDIT MODAL */}
+      
       {showEditModal && (
         <div className="stu-modal-overlay" onClick={() => setShowEditModal(false)}>
           <div className="stu-modal" onClick={e => e.stopPropagation()}>

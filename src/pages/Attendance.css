@@ -1,4 +1,4 @@
-/* DATE BADGE */
+
 .att-date-badge {
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: #fff;
@@ -8,7 +8,7 @@
   font-weight: 600;
 }
 
-/* MID ROW */
+
 .att-mid-row {
   display: grid;
   grid-template-columns: 240px 1fr 220px;
@@ -16,7 +16,7 @@
   align-items: start;
 }
 
-/* DONUT */
+
 .att-donut-card { min-width: 0; }
 
 .att-donut-wrap {
@@ -58,7 +58,7 @@
   color: #1e1b4b;
 }
 
-/* BAR CHART */
+
 .att-weekly-card { min-width: 0; }
 
 .att-bar-chart {
@@ -144,7 +144,7 @@
   margin-right: 5px;
 }
 
-/* GRADE CARD */
+
 .att-grade-list {
   display: flex;
   flex-direction: column;
@@ -189,7 +189,7 @@
 
 .att-grade-pct { font-size: 15px; font-weight: 700; }
 
-/* STATUS BADGES */
+
 .att-status-badge {
   padding: 4px 10px;
   border-radius: 20px;
@@ -201,7 +201,7 @@
 .att-absent  { background: #fee2e2; color: #991b1b; }
 .att-late    { background: #fef3c7; color: #92400e; }
 
-/* QUICK MARK BUTTONS */
+
 .att-quick-btns {
   display: flex;
   gap: 4px;
@@ -227,7 +227,7 @@
 .att-q-red         { background: #fff1f2; color: #dc2626; }
 .att-q-active-red  { background: #ef4444; color: #fff; }
 
-/* EDIT MODAL STATUS PICKER */
+
 .att-status-picker {
   display: flex;
   gap: 12px;

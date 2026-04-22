@@ -58,7 +58,7 @@ function Students() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [editErrors, setEditErrors] = useState<Record<string, string>>({})
 
-  // ── FILTER ──
+  
   const filtered = students.filter(s => {
     const matchSearch =
       s.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -68,7 +68,7 @@ function Students() {
     return matchSearch && matchGrade
   })
 
-  // ── PAGINATION ──
+ 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
   const safePage   = Math.min(currentPage, totalPages)
   const paginated  = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
@@ -77,11 +77,11 @@ function Students() {
     if (p >= 1 && p <= totalPages) setCurrentPage(p)
   }
 
-  // reset to page 1 when filter changes
+ 
   function handleSearch(val: string) { setSearch(val); setCurrentPage(1) }
   function handleGrade(val: string)  { setGradeFilter(val); setCurrentPage(1) }
 
-  // ── VALIDATE ──
+  
   function validate(f: typeof emptyForm) {
     const e: Record<string, string> = {}
     if (!f.name.trim()) e.name = 'Name is required'
@@ -92,7 +92,7 @@ function Students() {
     return e
   }
 
-  // ── ADD ──
+  
   function handleAdd() {
     const e = validate(form)
     if (Object.keys(e).length > 0) { setErrors(e); return }
@@ -111,14 +111,14 @@ function Students() {
     setShowAddModal(false); setCurrentPage(1)
   }
 
-  // ── EDIT OPEN ──
+ 
   function openEdit(s: Student) {
     setEditStudent(s)
     setEditForm({ name: s.name, grade: s.grade, subject: s.subject, status: s.status, score: String(s.score) })
     setEditErrors({})
   }
 
-  // ── EDIT SAVE ──
+  
   function handleEditSave() {
     const e = validate(editForm)
     if (Object.keys(e).length > 0) { setEditErrors(e); return }
@@ -130,12 +130,12 @@ function Students() {
     setEditStudent(null)
   }
 
-  // ── DELETE ──
+ 
   function handleDelete(id: number) {
     setStudents(prev => prev.filter(s => s.id !== id))
   }
 
-  // ── SHARED FORM FIELDS ──
+  
   function FormFields({ f, setF, errs }: { f: typeof emptyForm, setF: (v: typeof emptyForm) => void, errs: Record<string,string> }) {
     return (
       <>
@@ -182,7 +182,7 @@ function Students() {
   return (
     <div className="dash-app">
 
-      {/* SIDEBAR */}
+     
       <div className="dash-sidebar">
         <div className="dash-logo">
           <div className="dash-logo-icon">🎓</div>
@@ -217,13 +217,13 @@ function Students() {
         <div className="dash-sidebar-user">
           <div className="dash-user-avatar">HS</div>
           <div>
-            <div className="dash-user-name">Halima Selina</div>
+            <div className="dash-user-name">Pranali Bagilgekar</div>
             <div className="dash-user-role">Teacher</div>
           </div>
         </div>
       </div>
 
-      {/* MAIN */}
+      
       <div className="dash-main">
 
         <div className="dash-topbar">
@@ -238,7 +238,7 @@ function Students() {
           </div>
         </div>
 
-        {/* STAT CARDS */}
+       
         <div className="dash-stats-grid">
           <div className="dash-stat-card card-blue">
             <div>
@@ -276,7 +276,7 @@ function Students() {
           </div>
         </div>
 
-        {/* TABLE + SIDE */}
+        
         <div className="stu-content-row">
           <div className="dash-card stu-table-card">
             <div className="dash-card-header">
@@ -348,7 +348,7 @@ function Students() {
               </table>
             )}
 
-            {/* PAGINATION */}
+            
             <div className="stu-pagination">
               <span className="stu-page-info">
                 Showing {filtered.length === 0 ? 0 : (safePage - 1) * PAGE_SIZE + 1}–{Math.min(safePage * PAGE_SIZE, filtered.length)} of {filtered.length} students
@@ -364,7 +364,7 @@ function Students() {
             </div>
           </div>
 
-          {/* SIDE PANEL */}
+         
           <div className="stu-side-panel">
             <div className="dash-card stu-side-card">
               <div className="dash-card-header">
@@ -418,7 +418,7 @@ function Students() {
         </div>
       </div>
 
-      {/* ── ADD MODAL ── */}
+      
       {showAddModal && (
         <div className="stu-modal-overlay" onClick={() => setShowAddModal(false)}>
           <div className="stu-modal" onClick={e => e.stopPropagation()}>
@@ -437,7 +437,7 @@ function Students() {
         </div>
       )}
 
-      {/* ── VIEW MODAL ── */}
+     
       {viewStudent && (
         <div className="stu-modal-overlay" onClick={() => setViewStudent(null)}>
           <div className="stu-modal" onClick={e => e.stopPropagation()}>
@@ -494,7 +494,7 @@ function Students() {
         </div>
       )}
 
-      {/* ── EDIT MODAL ── */}
+     
       {editStudent && (
         <div className="stu-modal-overlay" onClick={() => setEditStudent(null)}>
           <div className="stu-modal" onClick={e => e.stopPropagation()}>

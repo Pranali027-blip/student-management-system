@@ -69,7 +69,6 @@ function Exam() {
   return (
     <div className="dash-app">
 
-      {/* SIDEBAR */}
       <div className="dash-sidebar">
         <div className="dash-logo">
           <div className="dash-logo-icon">🎓</div>
@@ -106,13 +105,12 @@ function Exam() {
         <div className="dash-sidebar-user">
           <div className="dash-user-avatar">HS</div>
           <div>
-            <div className="dash-user-name">Halima Selina</div>
+            <div className="dash-user-name">Pranali Bagilgekar</div>
             <div className="dash-user-role">Teacher</div>
           </div>
         </div>
       </div>
 
-      {/* MAIN */}
       <div className="dash-main">
 
         <div className="dash-topbar">
@@ -223,7 +221,6 @@ function Exam() {
         </div>
       </div>
 
-      {/* ADD EXAM MODAL */}
       {showModal && (
         <div className="exam-modal-overlay" onClick={() => setShowModal(false)}>
           <div className="exam-modal" onClick={e => e.stopPropagation()}>
@@ -279,7 +276,6 @@ function Exam() {
         </div>
       )}
 
-      {/* DELETE CONFIRM */}
       {deleteId !== null && (
         <div className="exam-modal-overlay" onClick={() => setDeleteId(null)}>
           <div className="exam-modal exam-confirm-modal" onClick={e => e.stopPropagation()}>

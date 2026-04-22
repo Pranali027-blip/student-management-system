@@ -17,7 +17,6 @@
   flex-wrap: wrap;
 }
 
-/* NOTIFICATION LIST */
 .notif-list {
   display: flex;
   flex-direction: column;
@@ -130,7 +129,6 @@
 .notif-item:hover .notif-del-btn { opacity: 1; }
 .notif-del-btn:hover { background: #fecaca; }
 
-/* BADGE ON SIDEBAR */
 .notif-badge {
   margin-left: auto;
   background: #ef4444;
@@ -143,7 +141,6 @@
   text-align: center;
 }
 
-/* EMPTY STATE */
 .notif-empty {
   text-align: center;
   padding: 60px 20px;

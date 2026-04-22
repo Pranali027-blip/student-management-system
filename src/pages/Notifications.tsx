@@ -74,8 +74,6 @@ function Notifications() {
 
   return (
     <div className="dash-app">
-
-      {/* SIDEBAR */}
       <div className="dash-sidebar">
         <div className="dash-logo">
           <div className="dash-logo-icon">🎓</div>
@@ -100,9 +98,9 @@ function Notifications() {
             <span className="dash-nav-icon">🗓️</span> Exam
           </li>
           <li className="dash-nav-item active">
-    <span className="dash-nav-icon">🗓️</span> Notifications
-  </li>
-  </ul>
+            <span className="dash-nav-icon">🗓️</span> Notifications
+          </li>
+        </ul>
 
         <div className="dash-sidebar-banner">
           <div className="dash-banner-emoji">🔔</div>
@@ -112,16 +110,13 @@ function Notifications() {
         <div className="dash-sidebar-user">
           <div className="dash-user-avatar">HS</div>
           <div>
-            <div className="dash-user-name">Halima Selina</div>
+            <div className="dash-user-name">Pranali Bagilgekar</div>
             <div className="dash-user-role">Teacher</div>
           </div>
         </div>
       </div>
 
-      {/* MAIN */}
       <div className="dash-main">
-
-        {/* TOPBAR */}
         <div className="dash-topbar">
           <div>
             <h1 className="dash-page-title">Notifications</h1>
@@ -139,7 +134,6 @@ function Notifications() {
           </div>
         </div>
 
-        {/* STAT CARDS */}
         <div className="notif-stats-grid">
           <div className="dash-stat-card card-blue">
             <div>
@@ -175,7 +169,6 @@ function Notifications() {
           </div>
         </div>
 
-        {/* NOTIFICATION LIST CARD */}
         <div className="dash-card">
           <div className="dash-card-header" style={{flexWrap:'wrap', gap:'12px'}}>
             <h3>All Notifications</h3>

@@ -51,20 +51,16 @@ function Dashboard() {
   const navigate = useNavigate()
   const today = new Date()
 
-  // Calendar
   const [calMonth, setCalMonth] = useState(today.getMonth())
   const [calYear,  setCalYear]  = useState(today.getFullYear())
   const calWeeks = buildCalendar(calMonth, calYear)
 
-  // Chart
   const [chartPeriod, setChartPeriod] = useState('This Month')
 
-  // Events
   const [events, setEvents] = useState(initialEvents)
   const [showEventModal, setShowEventModal] = useState(false)
   const [newEvent, setNewEvent] = useState(newEventInit)
 
-  // Finance
   const [financeTab, setFinanceTab] = useState<'Weekly' | 'Monthly'>('Weekly')
 
   function handleAddEvent() {
@@ -86,7 +82,6 @@ function Dashboard() {
   return (
     <div className="dash-app">
 
-      {/* SIDEBAR */}
       <div className="dash-sidebar">
         <div className="dash-logo">
           <div className="dash-logo-icon">🎓</div>
@@ -124,16 +119,14 @@ function Dashboard() {
         <div className="dash-sidebar-user">
           <div className="dash-user-avatar">HS</div>
           <div>
-            <div className="dash-user-name">Pranali bagilgekar </div>
+            <div className="dash-user-name">Pranali Bagilgekar </div>
             <div className="dash-user-role">Teacher</div>
           </div>
         </div>
       </div>
 
-      {/* MAIN */}
       <div className="dash-main">
 
-        {/* TOPBAR */}
         <div className="dash-topbar">
           <div>
             <h1 className="dash-page-title">Dashboard</h1>
@@ -141,7 +134,6 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* STAT CARDS + BANNER ROW */}
         <div className="dash-top-row">
           <div className="dash-stats-grid">
             <div className="dash-stat-card card-blue">
@@ -178,7 +170,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* EXAM PROMO BANNER */}
           <div className="dash-promo-banner">
             <div className="dash-promo-text">
               <h2>Upcoming Exams<br />Are Near!</h2>
@@ -189,10 +180,8 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* PERFORMANCE + EVENTS ROW */}
         <div className="dash-mid-row">
 
-          {/* CHART */}
           <div className="dash-card dash-chart-card">
             <div className="dash-card-header">
               <h3>School Performance</h3>
@@ -234,7 +223,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* UPCOMING EVENTS */}
           <div className="dash-card dash-events-card">
             <div className="dash-card-header">
               <h3>Upcoming Events</h3>
@@ -264,10 +252,8 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* CALENDAR + FINANCE ROW */}
         <div className="dash-bottom-row">
 
-          {/* CALENDAR */}
           <div className="dash-card dash-calendar-card">
             <div className="dash-card-header">
               <h3>School Event Calendar</h3>
@@ -313,7 +299,6 @@ function Dashboard() {
             </table>
           </div>
 
-          {/* FINANCE */}
           <div className="dash-card dash-finance-card">
             <div className="dash-card-header">
               <h3>School Finance</h3>
@@ -367,7 +352,6 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* ADD EVENT MODAL */}
       {showEventModal && (
         <div className="exam-modal-overlay" onClick={() => setShowEventModal(false)}>
           <div className="exam-modal" onClick={e => e.stopPropagation()}>
